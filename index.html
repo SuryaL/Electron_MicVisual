@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="micSoundVisual">
+<head>
+	<title>Mic Visual</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<mytag ng-click="$root.closeWindow()">x</mytag>
+	 <!-- my dom -->
+  <p5 sketch="SoundVisual"></p5>
+
+  <!-- scripts -->
+  <script src="./node_modules/p5/lib/p5.js"></script>
+  <script src="./node_modules/p5/lib/addons/p5.dom.js"></script>
+  <script src="./node_modules/p5/lib/addons/p5.sound.js"></script>
+  <script src="./node_modules/angular/angular.js"></script>
+  <script src="./angular-p5.js"></script>
+  
+  <!-- my app -->
+  <script src="./drawSound.js"></script>
+  <script type="text/javascript">
+  	require('./renderer.js')
+  </script>
+</body>
+</html>
