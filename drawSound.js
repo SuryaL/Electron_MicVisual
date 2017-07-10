@@ -6,7 +6,7 @@ angular.module('micSoundVisual', [
     .factory('SoundVisual', ['p5', '$rootScope', function(p5, $rootScope) {
 
         return function(p) {
-            var mic, fft, canvas, btn;
+            var mic, fft, canvas;
             $rootScope.modes = ['freq', 'beats'];
             $rootScope.mode = 0;
             var size = 512; //power of 2; => 32 , <= 1024
@@ -15,13 +15,6 @@ angular.module('micSoundVisual', [
             p.setup = function() {
                 canvas = p.createCanvas(size, size);
                 mic = new p5.AudioIn();
-                var div = p.createDiv('');
-                btn = p.createButton('show bars');
-                btn.size(100, 30);
-                div.child(btn);
-                div.size(size, 30);
-                btn.size(size, 30);
-                div.style("text-align", "center");
                 fft = new p5.FFT(smooth, size);
                 mic.start();
                 fft.setInput(mic);
