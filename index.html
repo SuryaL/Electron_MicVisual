@@ -4,16 +4,17 @@
 	<title>Mic Visual</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body>
-	<mytag ng-click="$root.closeWindow()">x</mytag>
+<body >
+	<mytag class="close" ng-click="closeWindow()">x</mytag>
+	<mytag style="display:none;" ng-class="{'mode' : modes}" ng-click="switchMode()">{{modes[nextMode()]}}</mytag>
 	 <!-- my dom -->
   <p5 sketch="SoundVisual"></p5>
 
   <!-- scripts -->
+  <script src="./node_modules/angular/angular.js"></script>
   <script src="./node_modules/p5/lib/p5.js"></script>
   <script src="./node_modules/p5/lib/addons/p5.dom.js"></script>
   <script src="./node_modules/p5/lib/addons/p5.sound.js"></script>
-  <script src="./node_modules/angular/angular.js"></script>
   <script src="./angular-p5.js"></script>
   
   <!-- my app -->
